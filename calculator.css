@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Neue', cursive;
+}
+.heading{
+    text-align: center;
+    margin-bottom: 10px;
+    color: steelblue;
+    font-size: 25px;
+    border-bottom: 2px solid;
+}
+input{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    color: grey;
+    text-align: center;
+    margin: auto;
+    box-shadow: 0px 0px 0px 2px rgb(0, 0, 0, 20%);
+}
+.input1{
+    transition: 0.5s;
+}
+.input2{
+    transition: 0.5s;
+}
+.input1:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 4px rgb(0, 0, 0, 20%);
+}
+.input2:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 4px rgb(0, 0, 0, 20%);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: darkslategray;
+}
+.selectInput{
+    height: 70%;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.box{
+    max-width: 67%;
+    padding: 15px;
+    border: 3px solid;
+    border-radius: 5px;
+    background-color: lightsteelblue;
+    box-shadow: 0px 0px 0px 4px rgb(0, 0, 0, 20%);
+}
+.calculator{
+    display: grid;
+    grid-template-columns: 3fr 0fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 5px;
+    row-gap: 10px;
+}
+.output{
+    grid-column: 1 / span 3;
+    box-shadow: 0px 0px 0px 4px rgb(0, 0, 0, 20%);
+}
+.output:focus{
+    outline: none;
+}
+.submit{
+    grid-column: 1 / span 3;
+    width: 30%;
+    margin: auto;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.inputSuggestion{
+    color: green;
+    font-size: 15px;
+}
+.inputErrorSuggestion{
+    color: red;
+    font-size: 15px;
+}
+.inputWarningSuggestion{
+    color: goldenrod;
+    font-size: 15px;
+}

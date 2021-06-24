@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: whitesmoke;
+    flex-direction: column;
+}
+input{
+    font-size: 16px;
+    margin: 2px;
+    border: none;
+    padding: 5px;
+    border-radius: 7px;
+}
+input:focus{
+    outline: none
+}
+.container{
+    background-color: #e3d7ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 2px #0000003d;
+    display: flex;
+    flex: 0.2 0.8;
+}
+.tableDiv{
+    background-color: #e3d7ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 2px #0000003d;
+    margin-top: 15px;
+}
+.goButton{
+    padding: 3px;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#submitButton{
+    padding: 3px;
+    margin-top: 10px;
+    width: 90%;
+    font-size: 16px;
+    background-color: #b5e22b;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#submitButton:hover{
+    background-color: #b5e22b80;
+}
+#goButton:hover{
+    background-color: #8a2be299;
+}
+.citySearchButton{
+    padding: 3px;
+    margin-top: 10px;
+    width: 20%;
+    font-size: 16px;
+    background-color: #e22bcb;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.citySearchButton:hover{
+    background-color: #e22bcb73;
+}
+.inputSection{
+    border-right: 1px solid #80808059;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cards{
+    display: flex;
+    min-width: 500px;
+    max-width: 500px;
+    overflow-x: auto;
+}
+.dataEntryCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    /* border: 1px solid; */
+    border-radius: 5px;
+    margin: 2px;
+    background-color: #6464642b;
+}
+.dataEntryForm{
+    text-align: center;
+}
+.tableDiv{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+    max-width: 830px;
+    min-width: 830px;
+    max-height: 300px;
+    min-height: 0px;
+    overflow-y: auto;
+    
+}
+.fixedRow{
+    padding: 8px;
+    font-size: 20px;
+    color: blueviolet;
+    border-bottom: 1px solid;
+    font-weight: bold;
+}
+.studentDataRow{
+    border-bottom: 1px solid;
+}
+.userPanel{
+    background-color: #e3d7ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 2px #0000003d;
+    margin-top: 15px;
+    max-width: 600px;
+    min-width: 600px;
+    text-align: center;
+}
+.highestDiv{
+    background-color: #e3d7ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 2px #0000003d;
+    margin-top: 15px;
+    margin-left: 15px;
+}
