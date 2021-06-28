@@ -1,42 +1,37 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Test</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 <body>
-	<form method="post" action="#">
-		<input type="text" name="name" placeholder="name">
-		<input type="number" name="roll" placeholder="roll">
-		<button>Submit</button>
+	<form action="#" method="post">
+		<input name="input1" type="text">
+		<button name="button1" value="button1">Submit</button>
+	</form>
+	<form action="#" method="post">
+		<button name="destroy" value="destroy">Destroy</button>
 	</form>
 	<?php
-		function cleanData(&$str){
-			$str = preg_replace("/\t/", "\\t", $str);
-			$str = preg_replace("/\r?\n/", "\\n", $str);
-			if(strstr($str, '""')) $str = '"' . str_replace('"', '""', $str) . '"';
-		}
-
-		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			$data = [
-				["name" => $_POST["name"], "roll" => $_POST['roll']]
-			];
-
-			$fileName = "website_data_" . date('Ymd') . ".xls";
-
-			header("Content-Disposition: attachment; filename=\"$fileName\"");
-			header("Content-Type: application/vnd.ms-excel");
-
-			$flag = false;
-			foreach ($data as $row) {
-				if(!$flag){
-					echo implode("\t", array_keys($row)) . "\r\n";
-					$flag = true;
-				}
-				array_walk($row, __NAMESPACE__ . '\cleanData');
-				echo implode("\t", array_values($row)) . "\r\n";
+		if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["button1"])){
+			// echo "Good Morning " . $_POST["input1"];
+			if(isset($_SESSION["data"])){
+				$userList = $_SESSION["data"];
+				array_push($userList, $_POST["input1"]);
+				$_SESSION["data"] = $userList;
+			}else{
+				$userList = [];
+				array_push($userList, $_POST["input1"]);
+				$_SESSION["data"] = $userList;
 			}
-			exit;
+			print_r($_SESSION["data"]);
+		}
+		elseif($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["destroy"])){
+			session_destroy();
 		}
 	?>
 </body>
